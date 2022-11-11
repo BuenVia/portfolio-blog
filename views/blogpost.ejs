@@ -1,0 +1,17 @@
+<%- include('./partials/header') %>
+
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4><%= blogPost.title %></h4>
+            </div>
+            <div class="card-body">
+                <p>by: <%= blogPost.auth %></p>
+                <p><%= blogPost.createdAt.toLocaleDateString('en-GB') %></p>
+                <p><%- blogPost.sanitizedHtml %></p>
+            </div>
+            <div class="card-footer">
+                <a href="/" class="btn btn-sm">Back</a>
+            </div>
+        </div>
+
+<%- include('./partials/footer') %>

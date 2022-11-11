@@ -1,0 +1,21 @@
+<%- include('./partials/header') %>
+    
+    <h1>Dashboard</h1>
+
+    <a href="/admin/new" class="btn btn-success">New Blog Post</a>
+
+    <% blogPosts.forEach(post => { %>
+        <div class="card mt-4">
+            <div class="card-header">
+                <h4><%= post.title %></h4>
+            </div>
+            <div class="card-body">
+                <p>by: <%= post.auth %></p>
+                <p>Date: <%= post.createdAt.toLocaleDateString('en-GB') %></p>
+                <p><%- post.sanitizedHtml %></p>
+                <a href="/admin/edit/<%= post._id %>">Edit</a>
+            </div>
+        </div>
+    <% }) %>
+
+<%- include('./partials/footer') %>

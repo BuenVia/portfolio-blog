@@ -1,0 +1,65 @@
+:root {
+    --bkg-clr: rgb(238, 238, 238);
+    --card-bkg-clr: rgb(255, 255, 255);
+    --txt-clr: rgb(44, 44, 44);
+    --trim-clr: rgb(119, 82, 183);
+    --btn-hover-clr: rgb(116, 91, 205);
+    --txt-hover-clr: rgb(200, 200, 180);
+    --alt-border-clr: rgb(24, 24, 24);
+    --alt-shadow-clr: rgb(119, 82, 183);
+  }
+  
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bkg-clr);
+    font-family: "Rubik", sans-serif;
+    color: var(--txt-clr);
+    position: relative;
+    min-height: 100vh;
+  }
+
+.navbar {
+    padding: 2rem;
+    background-color: var(--trim-clr);
+  }
+  .navbar-brand {
+    font-size: 36px;
+    color: white;
+  }
+
+  .btn-sm {
+    background-color: var(--trim-clr);
+    color: white;
+  }
+  
+  .btn-sm:hover {
+    transition: 500ms;
+    background-color: var(--btn-hover-clr);
+    color: var(--txt-hover-clr);
+  }
+  .title {
+    margin: 2rem;
+    text-align: center;
+    color: var(--txt-clr);
+  }
+  main {
+    padding-bottom: 5rem;
+    height: 100%;
+  }
+  
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }

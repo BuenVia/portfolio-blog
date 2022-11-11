@@ -9,8 +9,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "19.0.0"
+  },
   "dependencies": {
     "body-parser": "^1.20.1",
+    "dependencies": "^0.0.1",
     "dompurify": "^2.4.1",
     "dotenv": "^16.0.3",
     "ejs": "^3.1.8",

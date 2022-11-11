@@ -12,7 +12,10 @@ require('dotenv').config()
 mongoose.connect(process.env.MONGO_DB)
 
 const app = express()
-const port = 3000
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
 app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))

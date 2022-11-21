@@ -50,6 +50,7 @@ app.post('/admin/delete/:id', blogRouter)
 
 // API
 app.get('/api/blog', blogRouter)
+app.get('/api/blog/latest', blogRouter)
 
 app.listen(port, (req, res) => {
     console.log(`App is listening on port: ${port}`);

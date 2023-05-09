@@ -52,6 +52,9 @@ app.post('/admin/delete/:id', blogRouter)
 app.get('/api/blog', blogRouter)
 app.get('/api/blog/latest', blogRouter)
 
+// Subjuntivo
+app.get('/subjuntivo', )
+
 app.listen(port, (req, res) => {
     console.log(`App is listening on port: ${port}`);
 })

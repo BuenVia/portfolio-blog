@@ -3,6 +3,7 @@ const ejs = require('ejs')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 
+//
 require('dotenv').config()
 
 mongoose.connect(process.env.MONGO_DB)
@@ -13,9 +14,14 @@ if (port == null || port == "") {
   port = 9000;
 }
 
+/* MIDDLEWARE */
+// Set the view engine using EJS
 app.set('view engine', 'ejs')
+// Parse JSON
 app.use(bodyParser.urlencoded({ extended: true }))
+// Load CSS for EJS pages
 app.use(express.static(`${__dirname}/public`))
+// Include headers 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.header(
@@ -25,6 +31,7 @@ app.use((req, res, next) => {
     next();
   });
 
+// Calls the router
 const blogRouter = require('./routes/blogRouter')
 
 // USER
@@ -52,9 +59,7 @@ app.post('/admin/delete/:id', blogRouter)
 app.get('/api/blog', blogRouter)
 app.get('/api/blog/latest', blogRouter)
 
-// Subjuntivo
-app.get('/subjuntivo', )
-
+//
 app.listen(port, (req, res) => {
     console.log(`App is listening on port: ${port}`);
 })

@@ -32,7 +32,8 @@ app.use((req, res, next) => {
   });
 
 // Calls the router
-const blogRouter = require('./routes/blogRouter')
+const blogRouter = require('./routes/blogRouter');
+const noteRouter = require ('./routes/noteRouter');
 
 // USER
 //Home page
@@ -58,6 +59,8 @@ app.post('/admin/delete/:id', blogRouter)
 // API
 app.get('/api/blog', blogRouter)
 app.get('/api/blog/latest', blogRouter)
+app.get('/api/note', noteRouter)
+app.post('/api/note', noteRouter)
 
 // Start the app
 app.listen(port, (req, res) => {

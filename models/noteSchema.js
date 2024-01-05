@@ -10,11 +10,15 @@ const noteSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    auth: {
+    author: {
         type: String,
         required: true
     },
     markdown: {
+        type: String,
+        required: true
+    },
+    tags: {
         type: String,
         required: true
     },

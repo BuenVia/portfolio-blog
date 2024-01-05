@@ -188,9 +188,35 @@ router.route('/api/note')
         }
     })
 })
-.post((req, res) => {
-    console.log(req.body);
-    res.send(req.body)
+.post(async (req, res) => {
+    const newNote = new Note({
+        title: req.body.title,
+        author: req.body.author,
+        markdown: req.body.markdown,
+        tags: req.body.tags,
+    })
+
+    try {
+        const note = await newNote.save();
+        res.send('Success') 
+    } catch (error) {
+        console.error(error);
+        res.redirect(error)
+    }
+})
+
+router.route('/api/note/:id')
+.get(async(req, res) => {
+    const id = req.params.id
+    // res.send(id)
+    try {
+        const note = await Note.findById(id)
+        console.log(note)
+        res.send(note)
+    } catch (error) {
+        console.error(error)
+        res.send(error)
+    }
 })
 
 // router.get('/api/blog/latest', async (req, res) => {

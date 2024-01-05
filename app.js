@@ -21,6 +21,7 @@ app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 // Load CSS for EJS pages
 app.use(express.static(`${__dirname}/public`))
+app.use(express.json())
 // Include headers 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -61,6 +62,7 @@ app.get('/api/blog', blogRouter)
 app.get('/api/blog/latest', blogRouter)
 app.get('/api/note', noteRouter)
 app.post('/api/note', noteRouter)
+app.get('/api/note/:id', noteRouter)
 
 // Start the app
 app.listen(port, (req, res) => {

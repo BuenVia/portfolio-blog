@@ -104,6 +104,15 @@ router.route('/api/blog')
     })
 })
 
+router.get('/api/blog/:slug', async (req, res) => {
+    try {
+        const blogPost = await Blog.findOne({ slug: req.params.slug })
+        res.send(blogPost)
+    } catch (error) {
+        res.send(error)
+    }
+})
+
 router.get('/api/blog/latest', async (req, res) => {
     const blog = await Blog.findOne({}, {}, { sort: {createdAt: -1 }})
     res.send(blog)

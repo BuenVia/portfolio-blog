@@ -60,6 +60,7 @@ app.post('/admin/delete/:id', blogRouter)
 // API
 app.get('/api/blog', blogRouter)
 app.get('/api/blog/latest', blogRouter)
+app.get('/api/blog/:slug', blogRouter)
 app.get('/api/note', noteRouter)
 app.post('/api/note', noteRouter)
 app.get('/api/note/:id', noteRouter)
